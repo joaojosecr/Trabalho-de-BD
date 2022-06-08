@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Descadastrar onibus{% endblock %}</h1>
+    <div id="box">
+
+        <div id="boxshowout">
+            <div id="boxshowin">
+        
+                <form method="post">
+                    <p>
+                        <label for="lcodigo">Lcodigo</label>
+                        <select name="linhadel" required>
+        
+                            <table id="tabela">
+                                <tr>
+                                    <th>lcodigo</th>
+                                    </tr>
+                                {% for lcodigo in lcodigo %}
+                                <tr>
+                                    <option value={{lcodigo[0]}}> Cod. Linha: <th>{{ lcodigo[0] }} </th>
+                                    | Nome: <th>{{ lcodigo[1] }} </th>
+                                    | Destino: <th>{{ lcodigo[2] }} </th>
+                                    | Saida:<th>{{ lcodigo[3] }} </th>
+                                    </option>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+                   
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                    
+                </form>
+                
+             
+            </div> 
+        </div>    
+    </div>
+{% endblock %}  

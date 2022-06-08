@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Cadastrar intinerario{% endblock %}</h1>
+    
+    
+    <div id="box">
+        <div id="boxshowout">
+            <div id="boxshowin">
+
+                <form method="post">
+                    <p>
+                        <label for="placa">Placa</label>
+                        <input type="text" name="placa" placeholder="Placa" required>
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="chassi">Chassi</label>
+                        <input name="chassi" type="text" required placeholder="ABC 1B34">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="ano">Ano</label>
+                        <input name="ano" type="number" required placeholder="2000">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="modelo">Modelo</label>
+                        <input name="modelo" type="text" required placeholder="Modelo">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="data_compra">Data de Compra</label>
+                        <input name="data_compra" type="date" required placeholder="12/34/5678">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="valor_compra">Valor de Compra</label>
+                        <input name="valor_compra" type="number" required step="0.01">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="eficiencia">Eficiência</label>
+                        <input name="eficiencia" type="number" required step="0.1">
+                        </input>
+                    </p>
+
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                            
+                </form>
+             
+            </div> 
+        </div>    
+    </div>
+{% endblock %}

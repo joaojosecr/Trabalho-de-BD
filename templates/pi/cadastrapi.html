@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Cadastrar ponto{% endblock %}</h1>
+    
+    
+    <div id="box">
+        <div id="boxshowout">
+            <div id="boxshowin">
+
+                <form method="post">
+                    <p>
+                        <label for="ndi">Intinerario</label>
+                        <select name="nid"required>
+
+                            <table>
+                                <tr>
+                                    <th>nid</th>
+                                </tr>
+                                {% for nid in nid %}
+                                <tr>
+                                    <option value={{nid[0]}}>| Intinerario: <th >{{nid[0]}}</th>   |   Codigo:<th>{{nid[1]}}</th>   |   Km:<th>{{nid[2]}}</th> </option>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="bairro">Bairro</label>
+                        <input name="bairro" placeholder="Bairro" type="text" required placeholder="123.456.789-00">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="numero">Numero</label>
+                        <input name="numero"  type="number" required placeholder="Numero">
+                        </input>
+                    </p>
+
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                            
+                </form>
+             
+            </div> 
+        </div>    
+    </div>
+{% endblock %}

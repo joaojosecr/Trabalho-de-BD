@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Intinerarios{% endblock %}</h1>
+    <div id='box'>
+        
+        <form method="POST">
+
+            <table id="table">
+                <tr>
+                    <th id="th">Intinerario</th>
+                    <th id="th">Linha</th>
+                    <th id="th">Distancia </th>
+                    <th id="th">Nome</th>
+                    <th id="th">Placa onibus responsavel</th>
+                </tr>
+                {% for book in books %}
+                <tr>
+                    <th id="th">{{ book[0] }} </th>
+                    <th id="th">{{ book[1] }} </th>
+                    <th id="th">{{ book[2] }} km</th>
+                    <th id="th">{{ book[4] }} </th>
+                    <th id="th">{{ book[3] }} </th>
+                </tr>
+                {% endfor %}
+            </table>
+        </form>        
+        
+    </div>
+{% endblock %}

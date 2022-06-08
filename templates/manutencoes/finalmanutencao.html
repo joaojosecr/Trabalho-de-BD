@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Finalizar manutenção{% endblock %}</h1>
+     
+    <div id="box">           
+        <div id="boxshowout">
+            <div id="boxshowin">   
+            
+                <form method="post">    
+                    <p>
+                        <label for="manut">Manutenção</label>
+                        <select name="ords"required>
+
+                            <table>
+                                <tr>
+                                    <th>Manutenção</th>
+                                </tr>
+                                {% for manut in manut %}
+                                <tr>
+                                    <option value={{manut[0]}}>| Placa: <th >{{manut[6]}}</th>   |   O.S.:<th>{{manut[0]}}</th>   |   Data:<th>{{manut[4]}}</th></option>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="valor">Valor:</label>
+                        <input name="valor" type="number" >
+                    </input>
+                    </p>
+
+                    <p>
+                        <label for="data_saida">Data saida:</label>
+                        <input type="date" name="data_saida" >
+                        </input>
+                    </p>
+                    
+                    <p>
+                        <button type="submit">Submit</button>
+                        
+                    </p>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

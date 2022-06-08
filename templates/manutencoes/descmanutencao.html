@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Descadastrar manutenção{% endblock %}</h1>
+    
+    
+    <div id="box">
+        <div id="boxshowout">
+            <div id="boxshowin">
+                <table id="table">
+                    
+                    <h3>Escolha o manutenção a ser deletada:</h3>
+                </table>
+                <form method="post">
+                    <p>
+                        <label for="ords">Ordem de serviço</label>
+                        <select name="ords" required>
+        
+                            <table id="tabelabusplaca">
+                                <tr>
+                                    <th>Ordem de serviço</th>
+                                </tr>
+                                {% for ords in ords %}
+                                <tr>
+                                    <option value={{ords[0]}}>| O.S.: <th>{{ ords[0] }} </th>
+                                        | Motivo: <th>{{ ords[1] }} </th>
+                                        | Valor: <th>{{ ords[3] }} </th>
+                                        | Data entrada: <th>{{ ords[4] }} </th>
+                                        | Data saida: <th>{{ ords[5] }} </th>
+                                        | Placa:<th>{{ ords[6] }} </th></option>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+                    
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                    
+                </form>
+                
+             
+            </div> 
+        </div>    
+    </div>
+{% endblock %}

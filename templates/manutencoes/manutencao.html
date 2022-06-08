@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Manutenção{% endblock %}</h1>
+    <div id='box'>
+        
+                
+        <table id="table">
+            <tr>
+                <th id="th">Ordem Serviço</th>
+                <th id="th">Motivo</th>
+                <th id="th">Descrição</th>
+                <th id="th">Valor</th>
+                <th id="th">Data de entrada</th>
+                <th id="th">Data de saida</th>
+                <th id="th">Placa</th>
+                <th id="th">Chassi</th>
+                <th id="th">ID</th>
+                <th id="th">Modelo</th>
+                <th id="th">Ano</th>
+                <th id="th">Eficiencia</th>
+                <th id="th">Finalizado</th>
+                
+            </tr>
+            {% for bus in bus %}
+            <tr>
+                <th id="th">{{ bus[0] }} </th>
+                <th id="th">{{ bus[1] }} </th>
+                <th id="th">{{ bus[2] }} </th>
+                <th id="th">{{ bus[3] }} </th>
+                <th id="th">{{ bus[4] }} </th>
+                <th id="th">{{ bus[5] }} </th>
+                <th id="th">{{ bus[6] }} </th>
+                <th id="th">{{ bus[8] }} </th>
+                <th id="th">{{ bus[9] }} </th>
+                <th id="th">{{ bus[13] }} </th>            
+                <th id="th">{{ bus[12] }} </th>
+                <th id="th">{{ bus[16] }} </th>
+                <th id="th">{{ bus[7] }} </th>  
+            </tr>
+            {% endfor %}
+        </table>
+    
+    </div>
+{% endblock %}

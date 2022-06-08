@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Onibus{% endblock %}</h1>
+    <div id='box'>
+        
+                
+        <table id="table">
+            <tr>
+                <th id="th">Placa</th>
+                <th id="th">Chassi</th>
+                <th id="th">Ano</th>
+                <th id="th">Modelo</th>
+                <th id="th">Eficiência</th>
+                <th id="th">Disponibilidade</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <th id="th">{{ book[0] }} </th>
+                <th id="th">{{ book[1] }} </th>
+                <th id="th">{{ book[5] }} </th>
+                <th id="th">{{ book[6] }} </th>
+                <th id="th">{{ book[9] }} </th>
+                <th id="th">{{ book[3] }} </th>
+            </tr>
+            {% endfor %}
+        </table>
+    
+    </div>
+{% endblock %}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}- BD bus</title>
+    
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script defer src="../static/js/js.js"></script>
+</head>
+<body>
+
+    <nav id="dp-menu">
+
+        <ul>
+            <li><a href="{{ url_for('index') }}">Inicio</a></li>
+            <li><a href="{{ url_for('onibus') }}">Onibus</a>
+                <ul>
+                    <li><a href="{{ url_for('attonibus')}}">Atualizar</a></li>
+                    <li><a href="{{ url_for('cadastraonibus') }}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('removeonibus') }}">Descadastrar</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('linha') }}">Linhas</a>
+                <ul>
+                    <li><a href="{{ url_for('attlinha')}}">Atualizar</a></li>
+                    <li><a href="{{ url_for('cadastralinha') }}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('descadastralinha') }}">Descadastrar</a></li>
+                </ul>
+            </li>				
+            <li><a href="{{ url_for('intinerario1') }}">Intinerários 1</a>
+                <ul>
+                    <li><a href="{{ url_for('attintinerario1')}}">Atualizar</a></li>
+                    <li><a href="{{ url_for('cadastraintinerario1') }}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('removeintinerario1') }}">Descadastrar</a></li>
+                </ul>				
+            </li>
+            <li><a href="{{ url_for('intinerario2') }}">Intinerários 2</a>
+                <ul>
+                    <li><a href="{{ url_for('attintinerario2')}}">Atualizar</a></li>
+                    <li><a href="{{ url_for('cadastraintinerario2') }}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('removeintinerario2') }}">Descadastrar</a></li>
+                </ul>				
+            </li>
+            <li><a href="{{ url_for('manutencao')}}">Manutenções</a>
+                <ul>
+                    <li><a href="{{ url_for('descmanutencao') }}">Descadastrar</a></li>
+                    <li><a href="{{ url_for('cadastramanutencoes') }}">Iniciar</a></li>
+                    <li><a href="{{ url_for('finalmanutencoes') }}">Finalizar</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('motoristas')}}">Motoristas</a>
+                <ul>
+                    <li><a href="{{ url_for('attmotoristas')}}">Atualizar</a></li>
+                    <li><a href="{{ url_for('cadastramotoristas')}}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('descadastramotoristas')}}">Descadastrar</a></li>
+                </ul>
+            </li> 
+            <li><a href="{{ url_for('ponto')}}">Ponto</a>
+                <ul>
+                    <li><a href="{{ url_for('attponto')}}">Atualizar</a></li>
+                    <li><a href="{{ url_for('cadastraponto')}}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('descadastraponto')}}">Descadastrar</a></li>
+                </ul>
+            </li> 
+            <li><a href="{{ url_for('pi')}}">pi</a>
+                <ul>
+                    <li><a href="{{ url_for('attpi')}}">Atualizar</a></li>
+                    <li><a href="{{ url_for('cadastrapi')}}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('descadastrapi')}}">Descadastrar</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('index') }}">Login</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

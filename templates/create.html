@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Adicione um novo veiculo: {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label for="title">Chassi</label>
+            <input type="text" name="title"
+                   placeholder="Digite o Chassi:">
+            </input>
+        </p>
+
+        <p>
+            <label for="author">Placa</label>
+            <input type="text" name="author"
+                   placeholder="Digite a Placa" required>
+            </input>
+        </p>
+
+        <p>
+            <label for="pages_num">Modelo</label>
+            <input type="number" name="pages_num"
+                   placeholder="Digite o Modelo">
+            </input>
+        </p>
+        <p>
+        <label for="review">Ano</label>
+        <br>
+        <textarea name="review"
+                  placeholder="Review"
+                  rows="15"
+                  cols="60"
+                  ></textarea>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

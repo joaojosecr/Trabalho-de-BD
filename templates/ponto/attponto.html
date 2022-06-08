@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Atualizar ponto {% endblock %}</h1>
+    
+    
+    <div id="box">
+        <div id="boxshowout">
+            <div id="boxshowin">
+            
+                
+                <form method="post">
+                    <p>
+                        <label for="ponto">Ponto</label>
+                        <select name="pcodigo" required>
+        
+                            <table id="tabelabusplaca">
+                                <tr>
+                                    <th>Ponto</th>
+                                </tr>
+                                {% for ponto in ponto %}
+                                <tr>
+                                    <option value={{ponto[0]}}></tr>| Codigo: <th >{{ ponto[0] }} </th>
+                                        | Bairro: <th >{{ ponto[2] }} </th>
+                                        | Rua: <th >{{ ponto[1] }} </th>
+                                        | Numero:<th >{{ ponto[3] }} </th>
+                                    </option>
+
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="bairro">Bairro</label>
+                        <input type="text" name="bairro" placeholder="Bairro" >
+                        </input>
+                    </p>
+
+                    
+                    <p>
+                        <label for="rua">Rua</label>
+                        <input name="rua" type="text"  placeholder="Rua">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="numero">Numero</label>
+                        <input name="numero" type="number"  placeholder="Numero">
+                        </input>
+                    </p>
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                            
+                </form>
+             
+            </div> 
+        </div>    
+    </div>
+{% endblock %}

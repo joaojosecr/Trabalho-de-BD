@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Atualizar onibus{% endblock %}</h1>
+    
+    
+    <div id="box">
+        <div id="boxshowout">
+            <div id="boxshowin">
+            
+                <h3>
+                    Preencha apenas os elementos que deseja atualizar:
+                </h3>
+                <form method="post">
+                    <p>
+                        <label for="placa">Placa</label>
+                        <select name="placa" required>
+        
+                            <table id="tabela">
+                                <tr>
+                                    <th>Placa</th>
+                                    </tr>
+                                {% for placa in placa %}
+                                <tr>
+                                    <option value={{placa[0]}}> Placa: <th>{{ placa[0] }} </th>
+                                    | Chassi: <th>{{ placa[1] }} </th>
+                                    | Modelo: <th>{{ placa[6] }} </th>
+                                    | Ano:<th>{{ placa[5] }} </th>
+                                    | Data compra: <th>{{ placa[7] }} </th>
+                                    | Valor compra: <th>{{ placa[8] }} </th>
+                                    | Eficiencia: <th>{{ placa[9] }} </th>
+                                    </option>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="ano">Ano</label>
+                        <input name="ano" type="number" required placeholder="2000">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="modelo">Modelo</label>
+                        <input name="modelo" type="text" required placeholder="Modelo">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="data_compra">Data de Compra</label>
+                        <input name="data_compra" type="date" required placeholder="12/34/5678">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="valor_compra">Valor de Compra</label>
+                        <input name="valor_compra" type="number" required step="0.01">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="eficiencia">Eficiência</label>
+                        <input name="eficiencia" type="number" required step="0.1">
+                        </input>
+                    </p>
+
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                            
+                </form>
+             
+            </div> 
+        </div>    
+    </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Atualizar motorista{% endblock %}</h1>
+    
+    
+    <div id="box">
+        <div id="boxshowout">
+            <div id="boxshowin">
+            
+                
+                <form method="post">
+                    <p>
+                        <label for="cpf">Motorista</label>
+                        <select name="cpfdel" required>
+        
+                            <table id="tabelabusplaca">
+                                <tr>
+                                    <th>CPF</th>
+                                </tr>
+                                {% for cpf in cpf %}
+                                <tr>
+                                    <option value={{cpf[0]}}>| CPF: <th>{{ cpf[0] }} </th>| Nome: <th>{{ cpf[1] }} </th>  | CNH  <th>{{ cpf[2] }} </th></option>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" placeholder="Nome" >
+                        </input>
+                    </p>
+
+                    
+                    <p>
+                        <label for="cnh">CNH</label>
+                        <input name="cnh" oninput="mascaracnh(this)" type="text"  placeholder="12345678900">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="lcodigo">Motorista</label>
+                        <select name="lcodigo" required>
+        
+                            <table >
+                                <tr>
+                                    <th>Linha</th>
+                                </tr>
+                                {% for lcodigo in lcodigo %}
+                                <tr>
+                                    <option value={{lcodigo[0]}}>| Linha:<th> {{ lcodigo[0] }} </th> | Nome: <th>{{ lcodigo[1] }} </th></option>    
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                            
+                </form>
+             
+            </div> 
+        </div>    
+    </div>
+{% endblock %}

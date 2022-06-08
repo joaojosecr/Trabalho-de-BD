@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Atualizar onibus{% endblock %}</h1>
+    
+    
+    <div id="box">
+        <div id="boxshowout">
+            <div id="boxshowin">
+            
+                <h3>
+                    Preencha apenas os elementos que deseja atualizar:
+                </h3>
+                <form method="post">
+                    <p>
+                        <label for="lcodigo">Codigo</label>
+                        <select name="lcodigo" required>
+        
+                            <table id="tabela">
+                                <tr>
+                                    <th>Cod. Linha</th>
+                                    </tr>
+                                {% for lcodigo in lcodigo %}
+                                <tr>
+                                    <option value={{lcodigo[0]}}> Cod. Linha: <th>{{ lcodigo[0] }} </th>
+                                    | Nome: <th>{{ lcodigo[1] }} </th>
+                                    | Destino: <th>{{ lcodigo[2] }} </th>
+                                    | Saida:<th>{{ lcodigo[3] }} </th>
+                                    </option>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="nome">Nome</label>
+                        <input name="nome" type="text"  placeholder="abcdef">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="destino">Destino</label>
+                        <input name="destino" type="text"  placeholder="abcdef">
+                        </input>
+                    </p>
+
+                    <p>
+                        <label for="saida">Saida</label>
+                        <input name="saida" type="text"  placeholder="abcdef">
+                        </input>
+                    </p>
+
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                            
+                </form>
+             
+            </div> 
+        </div>    
+    </div>
+{% endblock %}

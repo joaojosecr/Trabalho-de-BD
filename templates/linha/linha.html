@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}Linha{% endblock %}</h1>
+    <div id='box'>
+        
+                
+        <table id="table">
+            <tr>
+                <th id="th">Linha</th>
+                <th id="th">Código</th>
+                <th id="th">Destino</th>
+                <th id="th">Saida</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <th id="th">{{ book[0] }} </th>
+                <th id="th">{{ book[1] }} </th>
+                <th id="th">{{ book[2] }} </th>
+                <th id="th">{{ book[3] }} </th>
+            </tr>
+            {% endfor %}
+        </table>
+    
+    </div>
+{% endblock %}
